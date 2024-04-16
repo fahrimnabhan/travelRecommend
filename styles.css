@@ -1,0 +1,185 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-image: url('travel-04.jpg'); /* Your background image */
+    background-size: cover;
+}
+
+/* Styles for the navigation bar */
+.navbar {
+    position: fixed; /* Fixed position */
+    top: 0; /* Align to the top of the page */
+    right: 0; /* Align to the right of the page */
+    z-index: 1000; /* Ensure it stays on top of other elements */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em 2em;
+}
+
+.logo {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 24px;
+    /* Set your icon image as a background */
+    background-image: url('title-icon.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 50px; /* Adjust based on your icon size */
+}
+
+.menu-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.search-area {
+    display: flex;
+}
+
+.search-input,
+.search-btn,
+.clear-btn {
+    padding: 0.5em;
+    margin: 0 0.5em;
+}
+
+.search-btn,
+.clear-btn {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.search-btn:hover,
+.clear-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* You may need to adjust the styling further to match your exact needs */
+
+/* Existing styles from previous instructions */
+
+/* Styles for the site header and introduction section */
+.site-header {
+    background-image: url('background.jpg'); /* Path to your actual background image */
+    color: white;
+    text-align: center;
+    padding: 2em 0;
+}
+
+.intro-section {
+    max-width: 800px; /* Adjust the max width as per your design */
+    margin: 0 auto;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.social-icon {
+    color: white;
+    font-size: 24px; /* Size of social media icons */
+    margin: 0 10px;
+}
+
+.intro-title {
+    font-size: 48px; /* Size of the main title */
+    margin-bottom: 0.5em;
+}
+
+.intro-description {
+    font-size: 18px; /* Size of the introduction text */
+    margin-bottom: 1em;
+}
+
+.book-now-btn {
+    background-color: #4CAF50; /* Green background for the button */
+    color: white;
+    padding: 1em 2em;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.book-now-btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Adjust the social media icons based on your preference */
+.fab {
+    padding: 10px;
+    border-radius: 50%;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.fab:hover {
+    transform: scale(1.1);
+    color: #4CAF50;
+}
+
+/* Your existing navbar styles here, ensuring it is semi-transparent and on top of the background image */
+.about-section h2,
+.team-section h3 {
+    text-align: center;
+    color: white;
+    background-color: transparent; /* Semi-transparent background */
+    padding: 2rem;
+    margin-top: 0;
+}
+
+.about-section p,
+.team-section > p {
+    margin: 1rem auto;
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+}
+
+.team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.team-member {
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: 1rem;
+    padding: 1rem;
+    width: 250px; /* Adjust based on preference */
+    text-align: center;
+}
+
+.team-member h4 {
+    margin-top: 1rem;
+}
+
+.team-member img {
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+    border-radius: 50%; /* Circular image */
+    margin: 1rem auto;
+}
+
+.team-member span {
+    display: block;
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem;
+    margin-top: 1rem;
+}
