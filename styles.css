@@ -183,3 +183,41 @@ body {
     padding: 0.5rem;
     margin-top: 1rem;
 }
+
+.contact-us-container {
+    width: 100%;
+    padding: 50px;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+#contact-form {
+    max-width: 500px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+#contact-form button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+#contact-form button:hover {
+    background-color: #45a049;
+}
