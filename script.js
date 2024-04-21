@@ -1,51 +1,122 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const searchBtn = document.querySelector('.search-btn');
-    const searchInput = document.querySelector('.search-input');
-    const clearBtn = document.querySelector('.clear-btn');
-    const resultsContainer = document.querySelector('.results-container'); // Make sure you have a container for the results in your HTML
-  
-    searchBtn.addEventListener('click', () => {
-      const keyword = searchInput.value.trim().toLowerCase();
-      fetchTravelData(keyword);
-    });
-  
-    clearBtn.addEventListener('click', () => {
-      searchInput.value = '';
-      resultsContainer.innerHTML = ''; // Clear current results
-    });
-  
-    async function fetchTravelData(searchQuery) {
-      try {
-        const response = await fetch('travel.json');
-        const data = await response.json();
-        const results = findMatches(searchQuery, data);
-        displayResults(results);
-      } catch (error) {
-        console.error('Error fetching travel data:', error);
-      }
+const searchBtn = document.querySelector('#search-recommendations');
+const clearBtn = document.querySelector('#clear-recommendations');
+const searchForm = document.querySelector('#search-recommendations-form');
+const searchTerm  = searchForm.querySelector("input");
+const resultDiv = document.querySelector("#results");
+
+function normalizeKeyword(keyword) {
+    return keyword.toLowerCase().trim();
+}
+
+function checkKeywordVariations(keyword) {
+    const normalizedKeyword = normalizeKeyword(keyword);
+    const variations = [
+        'beach',
+        'beaches',
+        'beachy',
+        'temple',
+        'temples',
+        'country',
+        'countries'
+    ];
+
+    return variations.includes(normalizedKeyword);
+}
+
+searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const searchTermValue = searchTerm?.value?.trim?.();
+
+    if (searchTermValue && checkKeywordVariations(searchTermValue)) {
+        fetch("travel_recommendation_api.json")
+            .then(res => res.json())
+            .then(data => {
+                displayRecommendations(data,searchTermValue)
+                
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    } else {
+        console.log("Invalid or empty search term.");
     }
-  
-    function findMatches(keyword, data) {
-      const regex = new RegExp(keyword, 'i'); // Case insensitive search
-      // Flatten the data structure to search all items
-      const allData = [...data.countries.flatMap(c => c.cities), ...data.temples, ...data.beaches];
-      return allData.filter(item => regex.test(item.name) || regex.test(item.description));
+});
+
+
+function displayRecommendations(data, term) {
+    let options = [];
+    if (term.includes("bea")) {
+        options = data.beaches;
+    } else if (term.includes("countr")) {
+        options = getCountriesData(data.countries);
+    } else {
+        options = data.temples;
     }
-  
-    function displayResults(results) {
-      // Clear previous results
-      resultsContainer.innerHTML = '';
-      // Create new results elements
-      results.forEach(result => {
-        const resultElem = document.createElement('div');
-        resultElem.classList.add('result-item');
-        resultElem.innerHTML = `
-          <h3>${result.name}</h3>
-          <p>${result.description}</p>
-          <img src="${result.imageUrl}" alt="${result.name}" />
-        `;
-        resultsContainer.appendChild(resultElem);
-      });
+
+    const fragment = document.createDocumentFragment(); 
+
+    const currentTimeDiv = document.createElement("div");
+    currentTimeDiv.textContent = `Current time in ${data.name}: ${getCurrentTime()}`;
+
+    for (let option of options) {
+        const resItem = document.createElement("div");
+        const resItemImg = document.createElement("img");
+        const resInner = document.createElement("div");
+        const resItemName = document.createElement("h3");
+        const resItemDesc = document.createElement("p");
+        const resItemDate = document.createElement("p");
+        const resItemBtn = document.createElement("button");
+        const currentTimeDiv = document.createElement("div");
+        currentTimeDiv.textContent = `Current time in ${option.name}: ${getCurrentTime()}`;
+
+        resItem.classList.add("recommendation-item");
+
+        resItemImg.setAttribute("src", option.imageUrl);
+        resItemImg.setAttribute("alt", option.name);
+        resItem.appendChild(resItemImg);
+        resItemName.textContent = option.name;
+        resItemDesc.textContent = option.description;
+        resItemBtn.textContent = "Visit";
+        resItemDate.textContent = currentTimeDiv.textContent;
+
+        resInner.classList.add("recommendation-item-inner");
+
+        resInner.appendChild(resItemDate);
+        resInner.appendChild(resItemName);
+        resInner.appendChild(resItemDesc);
+        resInner.appendChild(resItemBtn);
+        
+        resItem.appendChild(resInner);
+        
+        fragment.appendChild(resItem);
     }
-  });
-  
+
+    resultDiv.innerHTML = ''; 
+    resultDiv.appendChild(fragment); 
+}
+
+
+function getCurrentTime() {
+    const options = { timeZone: 'America/New_York', hour12: true, hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    return new Date().toLocaleTimeString('en-US', options);
+}
+
+function getCountriesData(countries) {
+    const res = [];
+
+    for(let country of countries){
+        for(let city of country.cities) {
+            res.push({
+                name:city.name + " , "+country.name,
+                ...city
+            })
+        }
+    }
+
+    return res;
+}
+
+clearBtn.addEventListener("click",function(){
+    resultDiv.innerHTML = '';
+    searchTerm.value = "";
+})

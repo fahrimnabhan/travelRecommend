@@ -2,13 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Travelindo</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <title>Travelindo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- For social media icons -->
 </head>
 <link rel="stylesheet" href="styles.css">
-
 <body>
 
   <header>
@@ -20,11 +19,6 @@
             <a href="contact-us.html">Contact Us</a>
         </div>
         <div class="search-container">
-            <form id="search-recommendations-form" action="/search" method="GET">
-                <input type="text" placeholder="Search..." name="search">
-                <button id='search-recommendations' type="submit">Search</button>
-                <button id='clear-recommendations' type="reset" class="reset-button">Reset</button>
-            </form>
         </div>
     </nav>
   </header>
@@ -37,19 +31,33 @@
             <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
         </div>
         <div class="hero-content">
-            <div class="home-hero">
+        <div class='contact-container'>
+        <div>
+            <h1>CONTACT US</h1>
+            <p>Get in touch</p>
+        </div>
+        <div class='contact-form-container'>
+            <form action="/contact" method="GET">
                 <div>
-                    <h1>EXPLORE DREAM DESTINATION</h1>
-                    <p>It encourages exploration of unfamiliar territories, embracing diverse cultures and landscapes, while pursuing the desired destination that captivates the heart and ignites a sense of wonder.</p>
-                    <button class="book-now-btn">Book Now</button>                    
+                    <label for='name'>Name</label>
+                    <input id='name' type="text" placeholder="Name..." name="name">
                 </div>
-                <div id="results"></div>
-            </div>
+                <div>
+                    <label for='email'>Email</label>
+                    <input id='email' type="email" placeholder="Email..." name="email">
+                </div>
+                <div>
+                    <label for='message'>Message</label>
+                    <textarea id='message'  placeholder="Message..." name="message"></textarea>
+                </div>                                
+                <button type="submit" >Submit</button>
+            </form>
+        </div>
+        </div>
+
 
         </div>
     </section>    
   </main>
-  <script type="text/javascript" src="script.js"></script>
-
 </body>
 </html>
