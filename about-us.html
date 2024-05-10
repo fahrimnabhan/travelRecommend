@@ -4,57 +4,66 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travelindo</title>
+  <title>About Us - Travelindo</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- For social media icons -->
+  <link rel="stylesheet" href="styles.css"> <!-- Ensure CSS is within the <head> tag -->
 </head>
-<link rel="stylesheet" href="styles.css">
 <body>
 
   <header>
     <nav>
-        <a href="index.html" class="logo">Travelindo</a>
-        <div class='menu'>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="contact-us.html">Contact Us</a>
-        </div>
-        <div class="search-container">
-        </div>
+      <a href="index.html" class="logo">Travelindo</a>
+      <ul class='menu'> <!-- Use <ul> for navigation links for better semantics -->
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about-us.html">About Us</a></li>
+        <li><a href="contact-us.html">Contact Us</a></li>
+      </ul>
     </nav>
   </header>
   <main>
     <section class="hero">
-        <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="hero-content">
-            <h1>ABOUT US</h1>
-            <p>Welcome to Our Company! We are a team of passionate individuals dedicated to providing excellent services/products to our customers. Our mission is to provide the best experience for people traveling to different destinations around the world. Our values include integrity, innovation, customer satisfaction, and teamwork. We believe in putting our customers first and working together to achieve our goals.</p>
-            <p>Feel free to explore our website to learn more about what we offer!</p>
-            <div class="team-section">
-                <h2>Our <br> Team</h2>
-                <div class='team-list'>
-                    <div class="team-member">
-                        <h3>John Doe</h3>
-                        <p>John is responsible for...</p>
-                        <p>Role: CEO</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Jane Doe</h3>
-                        <p>Jane is responsible for...</p>
-                        <p>Role: COO</p>
-                    </div>
-                    <div class="team-member">
-                        <h3>Jim Doe</h3>
-                        <p>Jim is responsible for...</p>
-                        <p>Role: CFO</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="hero-content">
+        <h1>About Us</h1>
+        <p>Welcome to Our Company! We are a team of passionate individuals dedicated to providing excellent services/products to our customers. Our mission is to provide the best experience for people traveling to different destinations around the world. Our values include integrity, innovation, customer satisfaction, and teamwork. We believe in putting our customers first and working together to achieve our goals.</p>
+        <p>Feel free to explore our website to learn more about what we offer!</p>
+        <section class="team-section">
+          <h2>Our Team</h2>
+          <div class='team-list'>
+            <article class="team-member">
+              <h3>John Doe</h3>
+              <p>As the Chief Executive Officer, John leads the strategic vision and overall direction of the company. 
+                He focuses on driving business growth, ensuring that all departments align with the company's long-term objectives. 
+                John also maintains strong relationships with external partners and stakeholders, 
+                representing the company in major forums and public appearances.
+              </p>
+              <p>Role: CEO</p>
+            </article>
+            <article class="team-member">
+              <h3>Jane Doe</h3>
+              <p>As the Chief Operating Officer, Jane oversees the day-to-day administrative and operational functions of the company. 
+                Her responsibilities include managing internal operations, 
+                streamlining business processes, and ensuring the efficiency and effectiveness of service delivery. 
+                Jane plays a crucial role in implementing business strategies and maintaining operational excellence.
+              </p>
+              <p>Role: COO</p>
+            </article>
+            <article class="team-member">
+              <h3>Jim Doe</h3>
+              <p>As the Chief Financial Officer, Jim is responsible for managing the company’s financial actions, 
+                including tracking cash flow, financial planning, and analyzing the company's financial strengths and weaknesses. 
+                Jim also proposes corrective actions and ensures that the financial practices are in line with regulatory requirements and the company's budget.
+              </p>
+              <p>Role: CFO</p>
+            </article>
+          </div>
+        </section>
+      </div>
     </section>    
   </main>
 </body>

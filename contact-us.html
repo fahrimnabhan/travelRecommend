@@ -4,60 +4,56 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Travelindo</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"> <!-- For social media icons -->
+  <title>Contact Us - Travelindo</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Moved inside <head> for proper loading -->
 </head>
-<link rel="stylesheet" href="styles.css">
 <body>
 
   <header>
     <nav>
-        <a href="index.html" class="logo">Travelindo</a>
-        <div class='menu'>
-            <a href="index.html">Home</a>
-            <a href="about-us.html">About Us</a>
-            <a href="contact-us.html">Contact Us</a>
-        </div>
-        <div class="search-container">
-        </div>
+      <a href="index.html" class="logo">Travelindo</a>
+      <div class='menu'>
+        <a href="index.html">Home</a>
+        <a href="about-us.html">About Us</a>
+        <a href="contact-us.html">Contact Us</a>
+      </div>
     </nav>
   </header>
+
   <main>
     <section class="hero">
-        <div class="social-icons">
-            <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-        </div>
-        <div class="hero-content">
-        <div class='contact-container'>
-        <div>
-            <h1>CONTACT US</h1>
-            <p>Get in touch</p>
-        </div>
-        <div class='contact-form-container'>
+      <div class="social-icons">
+        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+      </div>
+      <div class="hero-content">
+        <div class="contact-container">
+          <h1>CONTACT US</h1>
+          <p>Get in touch</p>
+          <div class="contact-form-container">
             <form action="/contact" method="GET">
-                <div>
-                    <label for='name'>Name</label>
-                    <input id='name' type="text" placeholder="Name..." name="name">
-                </div>
-                <div>
-                    <label for='email'>Email</label>
-                    <input id='email' type="email" placeholder="Email..." name="email">
-                </div>
-                <div>
-                    <label for='message'>Message</label>
-                    <textarea id='message'  placeholder="Message..." name="message"></textarea>
-                </div>                                
-                <button type="submit" >Submit</button>
+              <div>
+                <label for='name'>Name:</label>
+                <input id='name' type="text" placeholder="Name..." name="name">
+              </div>
+              <div>
+                <label for='email'>Email:</label>
+                <input id='email' type="email" placeholder="Email..." name="email">
+              </div>
+              <div>
+                <label for='message'>Message:</label>
+                <textarea id='message' placeholder="Message..." name="message"></textarea>
+              </div>
+              <button type="submit">Submit</button>
             </form>
+          </div>
         </div>
-        </div>
-
-
-        </div>
-    </section>    
+      </div>
+    </section>
   </main>
+
 </body>
 </html>
